@@ -34,10 +34,8 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-<summary>[Ruby](https://rubocop.org/)</summary>
-
-</details>
+- [Ruby](https://rubocop.org/)
+- Ruby on rails
 
 <!-- Features -->
 
@@ -51,8 +49,7 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-- Clone the project `git clone https://github.com/Omwomo/eugene-mindscape.git .` to the directory of your desire
-- Set up your [linter](https://github.com/microverseinc/linters-config/blob/master/ruby/) testing file
+Use the following instructions
 
 ### Prerequisites
 
@@ -62,8 +59,33 @@ In order to run this project you need:
 
 ### Setup
 
-Clone this repository to your desired folder:
+- Clone the project
+```
+git clone https://github.com/Omwomo/eugene-mindscape.git .
+```
+to the directory of your desire
 
+- To create database run
+```
+rails db:create
+rails db:migrate
+```
+
+- Set up your [linter](https://github.com/microverseinc/linters-config/blob/master/ruby/) testing file
+
+### Install
+
+To retrieve the dependencies of this project run
+```
+ bundle install
+```
+
+### Usage
+
+To make use of this project on your local computer
+```
+rails s
+```
 
 ## 👥 Author <a name="author"></a>
 
@@ -115,6 +137,6 @@ Can I contribute to this project?\*\*
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](LICENSE) licensed.
+This project is [MIT](MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
