@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :text, presence: true
 
-  after_save: update_user_posts_counter
+  after_save :update_user_posts_counter
 
   def recent_comments(limit = 5)
     comments.order(created_at: :desc).limit(limit)
