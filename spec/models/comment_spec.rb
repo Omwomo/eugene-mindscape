@@ -25,10 +25,10 @@ RSpec.describe Comment, type: :model do
     let(:post) { create(:post) }
 
     it 'increments comments_counter on creating a comment' do
-      expect {
+      expect do
         create(:comment, post: post)
         post.reload
-      }.to change { post.comments_counter }.by(1)
+      end.to change { post.comments_counter }.by(1)
     end
   end
 end

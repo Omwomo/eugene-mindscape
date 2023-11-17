@@ -20,10 +20,10 @@ RSpec.describe Like, type: :model do
     let(:post) { create(:post) }
 
     it 'increments likes_counter on creating a like' do
-      expect {
+      expect do
         create(:like, post: post)
         post.reload
-      }.to change { post.likes_counter }.by(1)
+      end.to change { post.likes_counter }.by(1)
     end
   end
 end
