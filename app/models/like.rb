@@ -5,7 +5,7 @@ class Like < ApplicationRecord
   validates :user_id, presence: true
   validates :post_id, presence: true
 
-  after_create :update_post_likes_counter
+  after_save :update_post_likes_counter
 
   private
 
