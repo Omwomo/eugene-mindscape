@@ -36,4 +36,15 @@ RSpec.describe User, type: :model do
       expect(recent_posts).to eq([post3, post2])
     end
   end
+
+  describe '#update_user_posts_counter' do
+    it 'updates posts_counter with the count of posts' do
+      user = create(:user)
+      create_list(:post, 3, author: user)
+
+      user.update_user_posts_counter
+
+      expect(user.reload.posts_counter).to eq(3)
+    end
+  end
 end
