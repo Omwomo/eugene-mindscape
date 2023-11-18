@@ -25,5 +25,15 @@ RSpec.describe User, type: :model do
 
       expect(recent_posts).to eq([post3, post2, post1])
     end
+
+    it 'returns recent posts with specified limit' do
+      user = create(:user)
+      post2 = create(:post, author: user)
+      post3 = create(:post, author: user)
+
+      recent_posts = user.recent_posts(2)
+
+      expect(recent_posts).to eq([post3, post2])
+    end
   end
 end
