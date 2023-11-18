@@ -24,8 +24,11 @@ RSpec.describe Post, type: :model do
   end
 
   it 'updates the user posts counter after saving' do
-    # post = create(:post, author: user)
-    expect(user.reload.posts_counter).to eq(0)
+    user = create(:user)
+
+    expect do
+      create(:post, author: user)
+    end.to change { user.reload.posts_counter }.by(1)
   end
 
   it 'returns recent comments' do
