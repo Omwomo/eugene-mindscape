@@ -38,4 +38,17 @@ RSpec.describe Post, type: :model do
     recent_comments = post.recent_comments(2)
     expect(recent_comments).to eq([comment2, comment1])
   end
+
+  it 'ensures CommentsCounter is an integer greater than or equal to zero' do
+    post = build(:post, comments_counter: 'not_an_integer', author: user)
+    expect(post).not_to be_valid
+    expect(post.errors[:comments_counter]).to include('is not a number')
+
+    post.comments_counter = -1
+    expect(post).not_to be_valid
+    expect(post.errors[:comments_counter]).to include('must be greater than or equal to 0')
+
+    post.comments_counter = 0
+    expect(post).to be_valid
+  end
 end
