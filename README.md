@@ -41,7 +41,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Modelling data in the rails databases
+- storing all the data in the database using PostgreSQL DBMS
+- A user being able to create a post.
+- People can comment and like te posts.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

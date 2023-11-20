@@ -10,6 +10,8 @@ class Like < ApplicationRecord
   private
 
   def update_post_likes_counter
+    return unless post.present?
+
     post.increment!(:likes_counter)
   end
 end
