@@ -101,7 +101,8 @@ rails s
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features
-- Adding a more complex Enumerable methods with more tables and data
+- Deploy the app.
+- Start posting real time blogs regurarly.
 
 ## 🤝 Contributing <a name="contributing"></a>
 
