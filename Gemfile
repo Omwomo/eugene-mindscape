@@ -9,6 +9,9 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+gem 'rails-controller-testing'
+gem 'shoulda-matchers', '~> 5.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.1.2'
 
