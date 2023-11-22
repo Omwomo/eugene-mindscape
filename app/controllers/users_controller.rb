@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-  def index
-    # logic to display all users
-  end
+  def index; end
 
   def show
-    # logic to display a single user
+    # Action to handle https://users/745
+    @user = User.find(params[:id])
   end
 end

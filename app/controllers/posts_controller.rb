@@ -1,9 +1,19 @@
 class PostsController < ApplicationController
+  before_action :set_user
+
   def index
-    # logic to display all posts by a given user
+    # Action to handle https://users/745/posts
+    @posts = @user.posts
   end
 
   def show
-    # logic to display a single post
+    # Action to handle https://users/745/posts/3
+    @post = @user.posts.find(params[:id])
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end
