@@ -14,7 +14,7 @@ RSpec.describe 'HomeController', type: :request do
 
     it 'renders the correct placeholder text of the body' do
       get root_path
-      expect(response.body).to include('This is where users will be displayed')
+      expect(response.body).to include('Welcome to Eugenes Mindscape Blog')
     end
   end
 end
