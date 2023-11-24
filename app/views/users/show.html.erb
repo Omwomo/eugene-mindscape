@@ -1,1 +1,21 @@
 <h1>User Profile</h1>
+<div>
+  <div> <%= image_tag @user.photo, alt: "picture of user", style: "width: 50px; height: 50px;" %> </div>
+  <div>
+    <h2> <%= @user.name %> </h2>
+    Posts Counter: <%= @user.posts_counter %>
+  </div>
+
+  <div> Bio: <br> <%= @user.bio %> </div>
+
+  <ul>
+    <% @user.recent_posts.each_with_index do |post, index| %>
+      <li>
+        Post #<%= index + 1 %> <br>
+        <%= link_to post.title, user_posts_path(@user) %>
+        <br>
+        Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+      </li>
+    <% end %>
+  </ul>
+</div>
