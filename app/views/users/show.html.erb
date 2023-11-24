@@ -12,10 +12,14 @@
     <% @user.recent_posts.each_with_index do |post, index| %>
       <li>
         Post #<%= index + 1 %> <br>
-        <%= link_to post.title, user_posts_path(@user) %>
+        <%= link_to post.title, user_post_path(@user, post) %>
         <br>
         Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
       </li>
     <% end %>
   </ul>
+
+  <button>
+    <%= link_to 'See all Posts', user_posts_path(@user) %>
+  </button>
 </div>
