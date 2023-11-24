@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  def index; end
+  def index
+    @users = User.all
+  end
 
   def show
     # Action to handle https://users/745
