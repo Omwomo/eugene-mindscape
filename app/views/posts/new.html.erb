@@ -1,0 +1,5 @@
+<%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
+  <%= f.text_field :title, placeholder: 'Title' %>
+  <%= f.text_area :text, placeholder: 'Text' %>
+  <%= f.submit 'Create Post' %>
+<% end %>
