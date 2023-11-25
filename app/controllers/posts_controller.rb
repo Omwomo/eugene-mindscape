@@ -11,6 +11,10 @@ class PostsController < ApplicationController
     @post = @user.posts.find(params[:id])
   end
 
+  def new
+    @post = Post.new
+  end
+
   def create
     @post = current_user.posts.build(post_params)
 
