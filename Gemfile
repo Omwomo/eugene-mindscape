@@ -7,6 +7,9 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'webdrivers'
+  gem 'selenium-webdriver'
 end
 
 gem 'rails-controller-testing'
