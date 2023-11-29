@@ -11,6 +11,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 #  gem 'selenium-webdriver'
 # end
 
+gem 'factory_bot_rails'
 gem 'rails-controller-testing'
 gem 'shoulda-matchers', '~> 5.0'
 
@@ -71,5 +72,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   # gem 'shoulda-matchers', '~> 4.5', require: false
+  gem 'rspec-rails'
   gem 'webdrivers'
 end

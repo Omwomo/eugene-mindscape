@@ -71,6 +71,6 @@ RSpec.configure do |config|
   # Capybara.javascript_driver = :selenium_chrome
 
   # config.include Capybara::DSL
-  # Webdrivers::Chromedriver.required_version = '76.0.3809.25'
-  # Capybara.default_driver = :selenium_chrome
+  Webdrivers::Chromedriver.required_version = '99.0.4844.51'
+  Capybara.default_driver = :selenium_chrome
 end

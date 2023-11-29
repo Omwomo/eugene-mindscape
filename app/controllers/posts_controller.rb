@@ -1,35 +1,34 @@
 class PostsController < ApplicationController
-  before_action :set_user
-
   def index
-    @posts = @user.posts
+    @user = User.find(params[:user_id])
+    @posts = @user.posts.includes(:comments)
+
   end
 
   def show
-    @post = @user.posts.find(params[:id])
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
   end
 
   def new
+    @user = User.find(params[:user_id])
     @post = Post.new
   end
 
   def create
-    puts 'Reached the create action'
-    @post = current_user.posts.build(post_params)
+    set_current_user
+    @post = @current_user.posts.build(post_params)
+    @post.comments_counter = 0
+    @post.likes_counter = 0
 
     if @post.save
-      flash[:notice] = 'Post created successfully!'
-      redirect_to post_path(@post)
+      redirect_to user_post_path(@current_user.id, @post.id), notice: 'Post was successfully Created'
     else
       render :new
     end
   end
 
   private
-
-  def set_user
-    @user = current_user
-  end
 
   def post_params
     params.require(:post).permit(:title, :text)
