@@ -9,7 +9,7 @@
   <div> Bio: <br> <%= @user.bio %> </div>
 
   <ul>
-    <% @user.recent_posts.each_with_index do |post, index| %>
+    <% @user.recent_posts.includes(:comments).each_with_index do |post, index| %>
       <li>
         Post #<%= index + 1 %> <br>
         <%= link_to post.title, user_post_path(@user, post) %>
