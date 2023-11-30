@@ -69,8 +69,21 @@ RSpec.configure do |config|
   # end
 
   # Capybara.javascript_driver = :selenium_chrome
+  Capybara.register_driver :chrome_headless do |app|
+    capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+      chromeOptions: { args: %w[headless disable-gpu] }
+    )
+
+    Capybara::Selenium::Driver.new(
+      app,
+      browser: :chrome,
+      desired_capabilities: capabilities
+    )
+  end
+
+  Capybara.javascript_driver = :chrome_headless
 
   # config.include Capybara::DSL
-  Webdrivers::Chromedriver.required_version = '99.0.4844.51'
-  Capybara.default_driver = :selenium_chrome
+  # Webdrivers::Chromedriver.required_version = '99.0.4844.51'
+  # Capybara.default_driver = :selenium_chrome
 end

@@ -17,10 +17,10 @@ require 'factory_bot_rails'
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara/rspec'
 
-Capybara.configure do |config|
-  config.default_driver = :selenium # or :poltergeist, :webkit, etc.
+# Capybara.configure do |config|
+#  config.default_driver = :selenium # or :poltergeist, :webkit, etc.
   # Other Capybara configurations go here
-end
+# end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
