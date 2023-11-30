@@ -1,12 +1,16 @@
 <% if @post.present? %>
+  <% user_associations = { comments: :user } %>
+  <% @post = @user.posts.includes(user_associations).find_by(id: @post.id) %>
+
   <p>Post #<%= @post.id %> by <%= @user.name %></p>
   Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
 
-    <p><%= @post.text %></p>
+  <p> <%= @post.title%> </p>
+  <p><%= @post.text %></p>
 
-    <ul>
-      <% @post.comments.each do |comment| %>
-        <li><%= @user.name %>: <%= comment.text %></li>
-      <% end %>
-    </ul>
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li><%= comment.user.name %>: <%= comment.text %></li>
+    <% end %>
+  </ul>
 <% end %>

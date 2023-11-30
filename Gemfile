@@ -7,11 +7,14 @@ gem 'dartsass-sprockets'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 # gem 'rspec-rails'
-group :development, :test do
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
-end
+# group :development, :test do
+#  gem 'factory_bot_rails'
+#  gem 'rspec-rails'
+#  gem 'capybara'
+#  gem 'selenium-webdriver'
+# end
 
+gem 'factory_bot_rails'
 gem 'rails-controller-testing'
 gem 'shoulda-matchers', '~> 5.0'
 
@@ -69,7 +72,9 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
+  # gem 'shoulda-matchers', '~> 4.5', require: false
+  gem 'rspec-rails'
+  gem 'webdrivers'
 end

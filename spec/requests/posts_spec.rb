@@ -17,7 +17,7 @@ RSpec.describe 'PostsController', type: :request do
 
     it 'renders the correct placeholder text of the body' do
       get user_posts_path(user_id: user.id)
-      expect(response.body).to include('All posts')
+      expect(response.body).to include(user.name)
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe 'PostsController', type: :request do
 
     it 'renders the correct placeholder text of the body' do
       get user_post_path(user_id: user.id, id: post.id)
-      expect(response.body).to include('User post')
+      expect(response.body).to include(post.title)
     end
   end
 end

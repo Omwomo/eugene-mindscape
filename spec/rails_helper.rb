@@ -6,6 +6,7 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -61,4 +62,28 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  # Capybara configuration
+
+  # Capybara.register_driver :selenium_chrome do |app|
+  #  Capybara::Selenium::Driver.new(app, browser: :chrome)
+  # end
+
+  # Capybara.javascript_driver = :selenium_chrome
+  Capybara.register_driver :chrome_headless do |app|
+    capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+      chromeOptions: { args: %w[headless disable-gpu] }
+    )
+
+    Capybara::Selenium::Driver.new(
+      app,
+      browser: :chrome,
+      desired_capabilities: capabilities
+    )
+  end
+
+  Capybara.javascript_driver = :chrome_headless
+
+  # config.include Capybara::DSL
+  # Webdrivers::Chromedriver.required_version = '99.0.4844.51'
+  # Capybara.default_driver = :selenium_chrome
 end
