@@ -18,8 +18,8 @@ require 'factory_bot_rails'
 require 'capybara/rspec'
 
 # Capybara.configure do |config|
-#  config.default_driver = :selenium # or :poltergeist, :webkit, etc.
-  # Other Capybara configurations go here
+# config.default_driver = :selenium # or :poltergeist, :webkit, etc.
+# Other Capybara configurations go here
 # end
 
 RSpec.configure do |config|
