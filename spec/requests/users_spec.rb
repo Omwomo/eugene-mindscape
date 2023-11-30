@@ -16,7 +16,7 @@ RSpec.describe 'UsersController', type: :request do
 
     it 'renders the correct placeholder text of the body' do
       get users_path
-      expect(response.body).to include('ALL USERS')
+      expect(response.body).to include('Home Page')
     end
   end
 
