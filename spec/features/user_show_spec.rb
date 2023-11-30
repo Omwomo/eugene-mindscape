@@ -5,7 +5,7 @@ require 'capybara/rspec'
 RSpec.describe 'User management', type: :feature do
   before do
     @user = FactoryBot.create(:user, name: 'Example User', id: 2)
-    FactoryBot.create(:post, title: 'Hello', id: 1, author: @user)
+    @post = FactoryBot.create(:post, title: 'Hello', author: @user)
   end
 
   describe 'User show page' do
@@ -30,7 +30,7 @@ RSpec.describe 'User management', type: :feature do
       expect(page).to have_current_path(user_posts_path(@user))
 
       # Test user's post title redirects to the post's show page
-      first_post = Post.first
+      first_post = @post
 
       post_path = user_post_path(@user, first_post)
 
