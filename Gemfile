@@ -5,6 +5,9 @@ gem 'bootstrap', '~> 5.0'
 gem 'bootstrap_form', '~> 5.4'
 gem 'dartsass-sprockets'
 
+gem 'devise'
+gem 'mini_racer'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 # gem 'rspec-rails'
 # group :development, :test do
