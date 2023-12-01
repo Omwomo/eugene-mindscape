@@ -7,6 +7,7 @@ gem 'dartsass-sprockets'
 
 gem 'devise'
 gem 'mini_racer'
+gem 'letter_opener'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 # gem 'rspec-rails'
