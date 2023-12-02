@@ -49,10 +49,6 @@ Rails.application.configure do
 
   config.action_controller.raise_on_missing_callback_actions = true
 
-  LetterOpener.configure do |config|
-    config.browser = :chrome
-  end
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
