@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 2rem;
+  padding: 0;
+}
+
+.login-forms {
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+}
+
+.shared-links {
+  height: 10%;
+  margin-top: auto;
+}
